@@ -40,7 +40,7 @@ import { generateStripeKey } from './action/stripeKeyAction.js';
 
 const App = () => {
 
-  axios.defaults.baseURL = "http://127.0.0.1:5000/";
+  axios.defaults.baseURL = "https://swipe-cart-backend-routes.vercel.app";
   
   const dispatch = useDispatch();
   const {loading, isAuthenticated, user} = useSelector(state => state.user);
