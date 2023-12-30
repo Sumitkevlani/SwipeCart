@@ -5,7 +5,7 @@ import Product from '../models/productsModel.js';
 import Order from '../models/orderModel.js';
 import isAuthenticatedUser from '../middleware/authentication.js';
 // import authorizeroles from '../middleware/authorizeroles.js';
-import authorizeroles from '../middleware/authorizeroles.js';
+import authorizeroles from '../middleware/authorizeadmin.js';
 const router = express.Router();
 import updateStock from '../utils/updateStock.js';
 import checkStock from '../utils/checkStock.js';

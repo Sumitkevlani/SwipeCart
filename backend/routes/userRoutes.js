@@ -7,7 +7,7 @@ import sendToken from "../utils/JwtToken.js";
 import sendEmail from '../utils/sendEmail.js';
 import crypto from 'crypto';
 import isAuthenticatedUser from "../middleware/authentication.js";
-import authorizeroles from "../middleware/authorizeroles.js";
+import authorizeroles from "../middleware/authorizeadmin.js";
 import { v2 as cloudinary } from "cloudinary";
 import upload from '../middleware/uploadmiddleware.js';
 

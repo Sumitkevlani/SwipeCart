@@ -4,7 +4,7 @@ import ErrorHandler from '../utils/errorhandler.js';
 import catchasyncerror from '../middleware/asyncerrormiddleware.js';
 import ApiFeatures from '../utils/apifeatures.js';
 import isAuthenticatedUser from '../middleware/authentication.js';
-import authorizeroles from '../middleware/authorizeroles.js';
+import authorizeroles from '../middleware/authorizeadmin.js';
 const router = express.Router();
 
 
