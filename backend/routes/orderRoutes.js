@@ -4,6 +4,7 @@ import catchasyncerror from "../middleware/asyncerrormiddleware.js";
 import Product from '../models/productsModel.js';
 import Order from '../models/orderModel.js';
 import isAuthenticatedUser from '../middleware/authentication.js';
+// import authorizeRoles from '../middleware/authorizeRoles.js';
 import authorizeRoles from '../middleware/authorizeroles.js';
 const router = express.Router();
 import updateStock from '../utils/updateStock.js';
