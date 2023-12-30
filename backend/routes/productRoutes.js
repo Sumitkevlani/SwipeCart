@@ -10,6 +10,7 @@ const router = express.Router();
 
 //GET ALL PRODUCTS
 router.get('/get-all-products', catchasyncerror(async (req, res, next) => {
+    console.log("Product requests");
     //query => Product.find()
     //queryStr => req.query
     const resultPerPage = 8;
