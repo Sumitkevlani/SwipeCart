@@ -4,8 +4,8 @@ import catchasyncerror from "../middleware/asyncerrormiddleware.js";
 import Product from '../models/productsModel.js';
 import Order from '../models/orderModel.js';
 import isAuthenticatedUser from '../middleware/authentication.js';
-// import authorizeRoles from '../middleware/authorizeRoles.js';
-import authorizeRoles from '../middleware/authorizeroles.js';
+// import authorizeroles from '../middleware/authorizeroles.js';
+import authorizeroles from '../middleware/authorizeroles.js';
 const router = express.Router();
 import updateStock from '../utils/updateStock.js';
 import checkStock from '../utils/checkStock.js';
@@ -68,7 +68,7 @@ router.get('/get-single-order/:id', isAuthenticatedUser, catchasyncerror(async (
 
 
 //GET ORDER DETAILS(ADMIN ONLY)
-router.get('/admin/get-single-order/:id', isAuthenticatedUser, authorizeRoles('admin'), catchasyncerror(async(req, res, next)=>{
+router.get('/admin/get-single-order/:id', isAuthenticatedUser, authorizeroles('admin'), catchasyncerror(async(req, res, next)=>{
     const orderId = req.params.id;
     const order = await Order.findOne({_id: orderId}).populate("user","name email");
     if(!order){
@@ -100,7 +100,7 @@ router.get('/get-my-orders', isAuthenticatedUser, catchasyncerror(async (req, re
 
 
 //GET ALL ORDERS(ADMIN ONLY)
-router.get('/admin/get-all-orders', isAuthenticatedUser, authorizeRoles('admin'), catchasyncerror(async (req, res, next)=>{
+router.get('/admin/get-all-orders', isAuthenticatedUser, authorizeroles('admin'), catchasyncerror(async (req, res, next)=>{
     const orders = await Order.find();
     let totalAmount = 0;
     let numberOfOrders = 0;
@@ -119,7 +119,7 @@ router.get('/admin/get-all-orders', isAuthenticatedUser, authorizeRoles('admin')
 
 
 //UPDATE ORDER DETAILS(ADMIN ONLY)
-router.put('/admin/update-order/:id', isAuthenticatedUser, authorizeRoles('admin'), catchasyncerror(async (req, res, next)=>{
+router.put('/admin/update-order/:id', isAuthenticatedUser, authorizeroles('admin'), catchasyncerror(async (req, res, next)=>{
     const order = await Order.findOne({_id: req.params.id});
 
     if(!order){
@@ -167,7 +167,7 @@ router.put('/admin/update-order/:id', isAuthenticatedUser, authorizeRoles('admin
 
 
 //DELETE AN ORDER(ADMIN ONLY)
-router.delete('/admin/delete-order/:id', isAuthenticatedUser, authorizeRoles('admin'), catchasyncerror(async (req, res, next)=>{
+router.delete('/admin/delete-order/:id', isAuthenticatedUser, authorizeroles('admin'), catchasyncerror(async (req, res, next)=>{
     const orderId = req.params.id;
     const order = await Order.findOne({_id: orderId});
     

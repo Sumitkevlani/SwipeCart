@@ -7,7 +7,7 @@ import sendToken from "../utils/JwtToken.js";
 import sendEmail from '../utils/sendEmail.js';
 import crypto from 'crypto';
 import isAuthenticatedUser from "../middleware/authentication.js";
-import authorizeRoles from "../middleware/authorizeroles.js";
+import authorizeroles from "../middleware/authorizeroles.js";
 import { v2 as cloudinary } from "cloudinary";
 import upload from '../middleware/uploadmiddleware.js';
 
@@ -233,7 +233,7 @@ router.put('/update-profile', isAuthenticatedUser, upload.single('avatar'), catc
 
 
 //GET ALL USERS ROUTE(ADMIN ONLY)
-router.get('/admin/get-all-users', isAuthenticatedUser, authorizeRoles('admin'), catchasyncerror(async(req, res, next)=>{
+router.get('/admin/get-all-users', isAuthenticatedUser, authorizeroles('admin'), catchasyncerror(async(req, res, next)=>{
     const users = await User.find();
     res.status(200).json({
         success: true,
@@ -243,7 +243,7 @@ router.get('/admin/get-all-users', isAuthenticatedUser, authorizeRoles('admin'),
 
 
 //GET SINGLE USER(ADMIN ONLY)
-router.get('/admin/get-user/:id', isAuthenticatedUser, authorizeRoles('admin'), catchasyncerror(async(req, res, next)=>{
+router.get('/admin/get-user/:id', isAuthenticatedUser, authorizeroles('admin'), catchasyncerror(async(req, res, next)=>{
     const id = req.params.id;
     const user = await User.findOne({_id : id});
     if(!user){
@@ -259,7 +259,7 @@ router.get('/admin/get-user/:id', isAuthenticatedUser, authorizeRoles('admin'), 
 
 
 //UPDATE USER ROLE(ADMIN ONLY)
-router.put('/admin/update-role/:id', isAuthenticatedUser, authorizeRoles('admin'), catchasyncerror(async (req, res, next) => {
+router.put('/admin/update-role/:id', isAuthenticatedUser, authorizeroles('admin'), catchasyncerror(async (req, res, next) => {
     const userId = req.params.id;
     
     const oldUser = await User.findOne({_id: userId});
@@ -288,7 +288,7 @@ router.put('/admin/update-role/:id', isAuthenticatedUser, authorizeRoles('admin'
 
 
 //DELETE A USER(ADMIN ONLY)
-router.delete('/admin/delete-user/:id', isAuthenticatedUser, authorizeRoles('admin'), catchasyncerror(async (req, res, next)=>{
+router.delete('/admin/delete-user/:id', isAuthenticatedUser, authorizeroles('admin'), catchasyncerror(async (req, res, next)=>{
     const userId = req.params.id;
 
     const user = await User.findById(userId);

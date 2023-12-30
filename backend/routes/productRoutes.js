@@ -4,7 +4,7 @@ import ErrorHandler from '../utils/errorhandler.js';
 import catchasyncerror from '../middleware/asyncerrormiddleware.js';
 import ApiFeatures from '../utils/apifeatures.js';
 import isAuthenticatedUser from '../middleware/authentication.js';
-import authorizeRoles from '../middleware/authorizeroles.js';
+import authorizeroles from '../middleware/authorizeroles.js';
 const router = express.Router();
 
 
@@ -44,7 +44,7 @@ router.get('/get-all-products', catchasyncerror(async (req, res, next) => {
     }
 }));
 
-router.get('/admin/products', isAuthenticatedUser, authorizeRoles("admin"), catchasyncerror(async (req, res, next) => {
+router.get('/admin/products', isAuthenticatedUser, authorizeroles("admin"), catchasyncerror(async (req, res, next) => {
     const products = await Product.find();
     res.status(200).json({
         success: true,
@@ -53,7 +53,7 @@ router.get('/admin/products', isAuthenticatedUser, authorizeRoles("admin"), catc
 }));
 
 //CREATE A NEW PRODUCT(ADMIN ONLY)
-router.post('/create-product/new', isAuthenticatedUser, authorizeRoles("admin"), catchasyncerror(async (req, res, next) => {
+router.post('/create-product/new', isAuthenticatedUser, authorizeroles("admin"), catchasyncerror(async (req, res, next) => {
     
     req.body.createdBy = req.user.id;
     const product = await Product.create(req.body);
@@ -70,7 +70,7 @@ router.post('/create-product/new', isAuthenticatedUser, authorizeRoles("admin"),
 }));
 
 //UPDATE A PRODUCT(ADMIN ONLY)
-router.put('/update-product/:id', isAuthenticatedUser, authorizeRoles("admin"), catchasyncerror(async (req, res, next) => {
+router.put('/update-product/:id', isAuthenticatedUser, authorizeroles("admin"), catchasyncerror(async (req, res, next) => {
     const product = await Product.findById(req.params.id);
     if (!product) {
         return next(new ErrorHandler("Product not found", 404));
@@ -90,7 +90,7 @@ router.put('/update-product/:id', isAuthenticatedUser, authorizeRoles("admin"), 
 
 
 //DELETE A PRODUCT(ADMIN ONLY)
-router.delete('/delete-product/:id', isAuthenticatedUser, authorizeRoles("admin"), catchasyncerror(async (req, res, next) => {
+router.delete('/delete-product/:id', isAuthenticatedUser, authorizeroles("admin"), catchasyncerror(async (req, res, next) => {
     const product = await Product.findById(req.params.id);
     if (!product) {
         return next(new ErrorHandler("Product not found", 404));
