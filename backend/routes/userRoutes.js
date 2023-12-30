@@ -94,7 +94,7 @@ router.post('/forgot-password',catchasyncerror(async (req, res, next)=>{
 
         //req.protocol : http or https
         //req.get("host") : localhost or any other remote host
-        const resetPasswordURL = `${req.protocol}://127.0.0.1:5173/resetpassword/${resetToken}`;
+        const resetPasswordURL = `${req.protocol}://${req.get("host")}/resetpassword/${resetToken}`;
 
         const message = `Your reset password link is: \n\n ${resetPasswordURL} \n\nIt is valid for 15 minutes only.`;
 
@@ -102,7 +102,7 @@ router.post('/forgot-password',catchasyncerror(async (req, res, next)=>{
         try{
             await sendEmail({
                 email: user.email,
-                subject: "SKomm password recovery",
+                subject: "SwipeCart password recovery",
                 message
             });
             res.status(200).json({
