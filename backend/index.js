@@ -6,10 +6,10 @@ import {default as productRoutes} from './routes/productRoutes.js';
 import {default as userRoutes} from './routes/userRoutes.js';
 import {default as orderRoutes} from './routes/orderRoutes.js';
 import {default as paymentRoutes} from './routes/paymentRoutes.js';
-import path,{ dirname } from 'path';
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// import path,{ dirname } from 'path';
+// import { fileURLToPath } from 'url';
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 import cookieParser from 'cookie-parser';
 import connectToDatabase from './database/db.js';
 import errormiddleware from './middleware/errormiddleware.js';
@@ -41,8 +41,8 @@ app.use(cors({
     credentials: true
 }));
 
-const filePath = path.join(__dirname, '..','frontend','dist','index.html');
-app.use(express.static(path.join(__dirname, '..','frontend','dist')));
+// const filePath = path.join(__dirname, '..','frontend','dist','index.html');
+// app.use(express.static(path.join(__dirname, '..','frontend','dist')));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -54,9 +54,9 @@ app.use('/api/order',orderRoutes);
 app.use('/api/payment',paymentRoutes);
 app.use(errormiddleware);
 
-app.get("*", function (req, res) {
-    res.sendFile(filePath);
-});
+// app.get("*", function (req, res) {
+//     res.sendFile(filePath);
+// });
 
 const PORT = process.env.PORT;
 const server = app.listen(PORT,()=>{
