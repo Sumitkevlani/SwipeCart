@@ -37,7 +37,7 @@ const app = express();
 
 
 app.use(cors({
-    origin: ['http://127.0.0.1:5173','https://swipecart-frontend.vercel.app'],
+    origin: ['http://127.0.0.1:5173','https://swipe-cart.vercel.app'],
     methods: ["POST","GET","PUT","DELETE"],
     credentials: true
 }));
