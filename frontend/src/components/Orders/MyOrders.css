@@ -1,0 +1,52 @@
+.Delivered{
+    color: green;
+    font-weight: bold;
+}
+.Processing{
+    color: red;
+    font-weight: bold;
+}
+.custom-layout{
+    width: 80%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.MuiDataGrid-columnSeparator{
+    display: none !important;
+}
+
+/* .MuiSvgIcon-root{
+    display: none !important;
+}  */
+
+/* .table-container{
+    border-color: #303f9f;
+    border-width: 2px;
+} */
+
+.table{
+    font-family: 'Poppins',sans-serif;
+    color: black;
+}
+
+.MuiDataGrid-columnHeaders{
+    background-color: #303f9f;
+    color: white;
+    font-weight: bold;
+}
+
+.MuiDataGrid-virtualScrollerContent{
+    background-color: white;
+    font-weight: bold;
+}
+
+@media(max-width:750px){
+    .custom-layout{
+        width: 100%;
+    }
+}

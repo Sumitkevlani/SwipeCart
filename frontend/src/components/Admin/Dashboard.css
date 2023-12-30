@@ -1,0 +1,37 @@
+.custom-container{
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.custom-line-chart{
+    height: 300px !important;
+    aspect-ratio: 1;
+}
+
+.custom-doughnut-chart{
+    height:  300px!important;
+    width: 300px !important;
+}
+
+
+@media (max-width: 700px) {
+  .custom-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .custom-border{
+    border:none;
+  }
+  .custom-dashboard{
+    margin-top: 5rem;
+  }
+  .custom-sidebar{
+    padding-left: 3rem;
+  }
+  .custom-layout{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}

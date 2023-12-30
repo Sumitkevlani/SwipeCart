@@ -1,0 +1,10 @@
+
+.MuiTreeItem-label{
+    background-color: #fff !important;
+}
+.sidebar span:hover{
+    color: #4338ca;
+    font-weight: bold;
+    transform: scale(1.05);
+    transition: all 0.2s;
+}

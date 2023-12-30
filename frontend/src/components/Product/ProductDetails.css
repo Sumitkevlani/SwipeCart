@@ -1,0 +1,17 @@
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+}
+.slick-next {
+  right: 3% !important;
+  z-index: 1;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: blue;
+}
+
+button:disabled{
+  background-color: #7986cb;
+}

@@ -1,0 +1,31 @@
+.custom-text{
+    line-height: 32px;
+    color: black;
+}
+.custom-layout{
+    /* grid grid-cols-2 px-[3%] mx-auto  */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin: auto;
+}
+
+.custom-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+@media(max-width: 700px){
+    .custom-layout{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .custom-cards{
+        flex-direction: column;
+        justify-content: center;
+    }
+}

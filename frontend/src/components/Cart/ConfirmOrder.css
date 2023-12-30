@@ -1,0 +1,25 @@
+.confirmOrderContainer{
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+}
+
+@media (max-width: 720px) {
+  .confirmOrderContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 530px) {
+    .custom-layout{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .custom-img{
+        height: 200px;
+        width: 50%;
+    }
+    
+}

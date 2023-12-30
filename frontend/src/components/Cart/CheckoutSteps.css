@@ -1,0 +1,7 @@
+.MuiPaper-root{
+    background-color: #e5e7eb !important;
+}
+.MuiStepConnector-active,
+.MuiStepConnector-completed{
+    background-color: rgb(67,56,202);
+}
