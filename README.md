@@ -1,4 +1,20 @@
 
+# SwipeCart
+
+SwipeCart is a full-stack E-commerce platform built using MERN stack with TailwindCSS and MUI as UI-toolkit.
+
+## Features
+
+- Secure user authentication and session storage using jwt-tokens.
+
+- Product catalogs with search, filter and pagination functionalities.
+
+- Detailed product description with add to cart     functionality.
+
+- Secure product checkout and payment gateway with Stripejs.
+
+
+
 ## API Reference
 
 #### Register user
@@ -247,3 +263,67 @@
 ```http
   GET /api/payment/stripeapikey
 ```
+## Demo
+
+https://drive.google.com/file/d/1DMYx9qbeOrx98H8-mwWF9Z2PpmJTmKp4/view?usp=drive_link
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`PORT`
+
+`MONGO_URI`
+
+`SECRET_KEY`
+
+`EXPIRE_TIME`
+
+`COOKIE_EXPIRE`
+
+`SMTP_HOST`
+
+`SMTP_PORT`
+
+`SMTP_USER`
+
+`SMTP_PASSWORD`
+
+`CLOUDINARY_NAME`
+
+`CLOUDINARY_APIKEY`
+
+`CLOUDINARY_APISECRET`
+
+`STRIPE_PUBLISHABLE_KEY`
+
+`STRIPE_SECRET_KEY`
+
+
+## Installation
+
+Install my-project with npm
+
+### For frontend
+```bash
+  cd frontend
+  npm install
+  npm run dev
+```
+
+### For backend
+```bash
+  cd backend
+  npm install
+  npm run dev
+```
+    
+## 🔗 Links
+
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sumit-kevlani-b61945224/)
+
+
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/KevlaniSum22554)
+
