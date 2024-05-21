@@ -13,7 +13,27 @@ SwipeCart is a full-stack E-commerce platform built using MERN stack with Tailwi
 
 - Secure product checkout and payment gateway with Stripejs.
 
+## Demo
 
+https://youtu.be/icyQ7u3b87c?si=SHoRcXrXUfAIUSLG
+
+## Installation
+
+Install my-project with npm
+
+### For frontend
+```bash
+  cd frontend
+  npm install
+  npm run dev
+```
+
+### For backend
+```bash
+  cd backend
+  npm install
+  npm run dev
+```
 
 ## API Reference
 
@@ -263,10 +283,6 @@ SwipeCart is a full-stack E-commerce platform built using MERN stack with Tailwi
 ```http
   GET /api/payment/stripeapikey
 ```
-## Demo
-
-https://drive.google.com/file/d/1DMYx9qbeOrx98H8-mwWF9Z2PpmJTmKp4/view?usp=drive_link
-
 
 ## Environment Variables
 
@@ -301,23 +317,7 @@ To run this project, you will need to add the following environment variables to
 `STRIPE_SECRET_KEY`
 
 
-## Installation
 
-Install my-project with npm
-
-### For frontend
-```bash
-  cd frontend
-  npm install
-  npm run dev
-```
-
-### For backend
-```bash
-  cd backend
-  npm install
-  npm run dev
-```
     
 ## 🔗 Links
 
