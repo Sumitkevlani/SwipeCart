@@ -19,7 +19,20 @@ https://youtu.be/icyQ7u3b87c?si=SHoRcXrXUfAIUSLG
 
 ## Installation
 
-Install my-project with npm
+Follow the steps below to install and run the project.
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+- [Node.js](https://nodejs.org/) (which includes npm)
+
+### Clone the Repository
+
+First, clone the repository to your local machine using `git`.
+
+```sh
+git clone https://github.com/Sumitkevlani/SwipeCart.git
+cd SwipeCart
 
 ### For frontend
 ```bash
