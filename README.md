@@ -14,6 +14,7 @@ SwipeCart is a full-stack E-commerce platform built using MERN stack with Tailwi
 - Secure product checkout and payment gateway with Stripejs.
 
 ## Demo
+Watch the video demonstration of the same:
 
 https://youtu.be/icyQ7u3b87c?si=SHoRcXrXUfAIUSLG
 
