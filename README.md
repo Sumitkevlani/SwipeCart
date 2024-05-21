@@ -33,7 +33,7 @@ First, clone the repository to your local machine using `git`.
 ```sh
 git clone https://github.com/Sumitkevlani/SwipeCart.git
 cd SwipeCart
-
+```
 ### For frontend
 ```bash
   cd frontend
